@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('includes/head', {title: 'Shopping Cart'}) %>
+        <link rel="stylesheet" href="/styles/cart.css" />
+    </head>
+    <body>
+        <header>
+            <%- include('includes/header') %>
+        </header>
+        <main>
+            <div class="area-container">
+                <h1 class="topic-font">Your Cart</h1>
+                <div class="cart-container">
+                    <div class="cart-item-box box-shadow">
+                        <div class="cart-item-summary">
+                            <h2 class="topic-font">iPad</h2>
+                            <p class="normal-font">
+                                236$ <span class="item-price">(53$)</span>
+                            </p>
+                        </div>
+                        <div class="cart-item-count-box">
+                            <form action="/cart/id/update">
+                                <input
+                                    class="normal-font item-count"
+                                    type="number"
+                                    id="item-count"
+                                    name="item-count"
+                                    step="1"
+                                />
+                                <button class="cart-item-submit">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cart-item-box box-shadow">
+                        <div class="cart-item-summary">
+                            <h2 class="topic-font">iPad</h2>
+                            <p class="normal-font">
+                                236$ <span class="item-price">(53$)</span>
+                            </p>
+                        </div>
+                        <div class="cart-item-count-box">
+                            <form action="/cart/id/update">
+                                <input
+                                    class="normal-font item-count"
+                                    type="number"
+                                    id="item-count"
+                                    name="item-count"
+                                    step="1"
+                                />
+                                <button class="cart-item-submit">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="cart-item-box box-shadow">
+                        <div class="cart-item-summary">
+                            <h2 class="topic-font">iPad</h2>
+                            <p class="normal-font">
+                                236$ <span class="item-price">(53$)</span>
+                            </p>
+                        </div>
+                        <div class="cart-item-count-box">
+                            <form action="/cart/id/update">
+                                <input
+                                    class="normal-font item-count"
+                                    type="number"
+                                    id="item-count"
+                                    name="item-count"
+                                    step="1"
+                                />
+                                <button class="cart-item-submit">Update</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-overall-price-container">
+                    <h1 class="topic-font overall-price-container">
+                        Total: 
+                        <span id="overall-price" class="overall-price">119$</span>
+                    </h1>
+                    <form action="/buy-items" method="POST">
+                            <button class="normal-font buy-items-submit">
+                                Buy Products
+                            </button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

@@ -1,0 +1,91 @@
+.input-area-container {
+    width: 40%;
+    margin: auto;
+    text-align: center;
+    color: rgb(173, 173, 173);
+}
+.input-area-container > h1 {
+    margin: 0 auto 1rem auto;
+    color: rgb(105, 105, 105);
+}
+.error-box {
+    text-align: left;
+    background-color: rgb(255, 189, 189);
+    color: red;
+    padding: 1rem 1rem 2rem 1rem;
+    margin: 1rem auto;
+    border-radius: 4px;
+}
+.error-box > h1 {
+    margin: 0;
+    font-weight: 500;
+    font-size: 1.5rem;
+}
+.error-box > p {
+    width: 100%;
+    margin: 0;
+    font-size: 1rem;
+}
+.input-form {
+    width: 80%;
+    margin: auto;
+    color: rgb(173, 173, 173);
+}
+.input-form  hr {
+    background-color: #ecc793;
+    height: 1px;
+    border: 0;
+}
+.input-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+}
+.text-input {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.02rem;
+    height: 2rem;
+    padding-left: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid transparent;
+}
+.input-label {
+    margin-bottom: 0.25rem;
+    text-transform: capitalize;
+}
+.text-input:focus {
+    outline: none;
+    border: 1px solid rgb(140, 140, 255);
+}
+textarea.text-input{
+    padding: 0.5rem;
+    height: 6rem;
+    resize: vertical;
+}
+.action-container {
+    display: flex;
+    flex-direction: row;
+    width: 20rem;
+}
+.action-container button {
+    background-color: #d88e25;
+    color: rgb(221, 221, 221);
+    width: 10rem;
+    margin-right: 1rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 4px;
+}
+.input-field button:hover,
+.input-field button:focus {
+    background-color: #d78005;
+    cursor: pointer;
+}
+.input-field a {
+    width: 10rem;
+    margin: auto;
+    padding: 0.5rem;
+    border: none;
+}

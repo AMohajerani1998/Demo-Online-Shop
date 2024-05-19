@@ -1,0 +1,23 @@
+{
+  "name": "project---online-shop",
+  "version": "1.0.0",
+  "description": "Demo Online Shop",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "author": "AMohajerani1998",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "csurf": "^1.11.0",
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "express-session": "^1.18.0",
+    "mongodb": "^6.6.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

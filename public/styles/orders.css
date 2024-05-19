@@ -1,0 +1,35 @@
+.area-container {
+    width: 50%;
+}
+.orders-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+.order-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #3c3834;
+    padding: 0.75rem 0.75rem 1rem 0.75rem;
+    color: rgb(198, 198, 198);
+    border-radius: 4px;
+}
+.order-items {
+    margin: 0 0 0 1rem;
+}
+.order-price-date-container {
+    margin: 0 0 0.5rem 0;
+}
+.order-price {
+    color: #d59231;
+}
+.order-status {
+    background-color: #ff9d14;
+    color: white;
+    height: 1.5rem;
+    padding: 0 0.75rem 0.2rem 0.75rem;
+    border-radius: 12px;
+    font-weight: 300;
+    font-size: 1.25rem;
+}

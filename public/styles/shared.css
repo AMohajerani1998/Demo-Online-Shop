@@ -1,0 +1,32 @@
+body {
+    margin: 0;
+    background-color: #211e1d;
+}
+ul {
+    padding: 0;
+}
+header {
+    width: 65%;
+    margin: auto;
+    color: #d59231;
+}
+.area-container > h1,
+.area-container > h3 {
+    color: rgb(173, 173, 173);
+}
+.anchor {
+    color: #ffb54f;
+    text-decoration: none;
+}
+.anchor:hover,
+.anchor:focus {
+    color: #ff9d14;
+    cursor: pointer;
+}
+.area-container {
+    width: 60%;
+    margin: auto;
+}
+.box-shadow {
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.112);
+}

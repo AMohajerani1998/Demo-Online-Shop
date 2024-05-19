@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('includes/head', {title: 'Sign up'}) %>
+        <link rel="stylesheet" href="/styles/sign-up-and-sign-in.css">
+    </head>
+    <body>
+        <header>
+            <%- include('includes/header') %>
+        </header>
+        <main>
+            <div class="input-area-container">
+                <h1 class="topic-font">Create New Account</h1>
+            <% if(inputData.inputError){ %>
+                <div class="error-box box-shadow">
+                    <h1 class="topic-font">INVALID INPUT</h1>
+                    <p class="normal-font">
+                        <%= inputData.errorMessage %>
+                    </p>
+                </div>
+            <% } %>
+                <div class="input-form-container box-shadow">
+                    <form class="input-form" action="/sign-up" method="POST">
+                        <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+                        <ul>
+                            <li class="input-field">
+                                <label
+                                    for="email"
+                                    class="input-label normal-font"
+                                    >e-mail</label
+                                >
+                                <input
+                                    type="email"
+                                    id="email"
+                                    name="email"
+                                    class="text-input"
+                                    value="<%= inputData.email %>"
+                                />
+                            </li>
+                            <li class="input-field">
+                                <label
+                                    for="confirm-email"
+                                    class="input-label normal-font"
+                                    >confirm email</label
+                                >
+                                <input
+                                    type="email"
+                                    id="confirm-email"
+                                    name="confirm-email"
+                                    class="text-input"
+                                    value="<%= inputData.confirmEmail %>"
+                                />
+                            </li>
+                            <li class="input-field">
+                                <label
+                                    for="password"
+                                    class="input-label normal-font"
+                                    >password</label
+                                >
+                                <input
+                                    type="password"
+                                    id="password"
+                                    name="password"
+                                    class="text-input"
+                                    value="<%= inputData.password %>"
+                                />
+                            </li>
+                            <hr />
+                            <li class="input-field">
+                                <label
+                                    for="fullname"
+                                    class="input-label normal-font"
+                                    >full name</label
+                                >
+                                <input
+                                    type="text"
+                                    id="fullname"
+                                    name="fullname"
+                                    class="text-input"
+                                    value="<%= inputData.fullName %>"
+                                />
+                            </li>
+                            <li class="input-field">
+                                <label
+                                    for="street"
+                                    class="input-label normal-font"
+                                    >street</label
+                                >
+                                <input
+                                    type="text"
+                                    id="street"
+                                    name="street"
+                                    class="text-input"
+                                    value="<%= inputData.street %>"
+                                />
+                            </li>
+                            <li class="input-field">
+                                <label
+                                    for="postal-code"
+                                    class="input-label normal-font"
+                                    >postal code</label
+                                >
+                                <input
+                                    type="text"
+                                    id="postal-code"
+                                    name="postal-code"
+                                    class="text-input"
+                                    value="<%= inputData.postalCode %>"
+                                />
+                            </li>
+                            <li class="input-field">
+                                <label
+                                    for="city"
+                                    class="input-label normal-font"
+                                    >city</label
+                                >
+                                <input
+                                    type="text"
+                                    id="city"
+                                    name="city"
+                                    class="text-input"
+                                    value="<%= inputData.city %>"
+                                />
+                            </li>
+                            <li class="input-field">
+                                <button class="normal-font">
+                                    Create Account
+                                </button>
+                                <a class="normal-font" href="">Login Instead</a>
+                            </li>
+                        </ul>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>

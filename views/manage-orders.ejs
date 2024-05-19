@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <%- include('includes/head', {title: 'Manage Orders'}) %>
+        <link rel="stylesheet" href="/styles/manage-order.css" />
+    </head>
+    <body>
+        <header>
+            <%- include('includes/header') %>
+        </header>
+        <main>
+            <div class="area-container">
+                <div class="orders-container">
+                    <div class="order-container normal-font">
+                        <div class="order-details-container">
+                            <div class="order-details-top">
+                                <p class="order-price-date-container">
+                                    <span class="order-price">100$</span>
+                                    -
+                                    <time datetime="">Thu, aug 17, 2024</time>
+                                </p>
+                            </div>
+                            <div class="buyer-name">
+                                Ash Mohajer
+                            </div>
+                            <div>
+                                <address class="buyer-address">
+                                    Via Adria 2
+                                </address>
+                            </div>
+                            <div class="order-details-bottom">
+                                <ul class="order-items">
+                                    <li>
+                                        <span>iPad</span>
+                                        -
+                                        <span>100$</span>
+                                        <span>
+                                            (
+                                                <span>$50</span>
+                                                X
+                                                <span>2</span>
+                                            )
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="actions-container">
+                                <form action="" method="POST" class="order-management-form">
+                                    <select name="status" class="normal-font" id="status">
+                                        <option value="pending">pending</option>
+                                        <option value="fulfilled">fulfilled</option>
+                                        <option value="canceled">canceled</option>
+                                    </select>
+                                    <button>Update</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="order-status">pending</div>
+                    </div>
+                    <div class="order-container normal-font">
+                        <div class="order-details-container">
+                            <div class="order-details-top">
+                                <p class="order-price-date-container">
+                                    <span class="order-price">100$</span>
+                                    -
+                                    <time datetime="">Thu, aug 17, 2024</time>
+                                </p>
+                            </div>
+                            <div class="order-details-bottom">
+                                <ul class="order-items">
+                                    <li>
+                                        <span>iPad</span>
+                                        -
+                                        <span>100$</span>
+                                        <span>
+                                            (
+                                                <span>$50</span>
+                                                X
+                                                <span>2</span>
+                                            )
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="order-status">pending</div>
+                    </div>
+                    <div class="order-container normal-font">
+                        <div class="order-details-container">
+                            <div class="order-details-top">
+                                <p class="order-price-date-container">
+                                    <span class="order-price">100$</span>
+                                    -
+                                    <time datetime="">Thu, aug 17, 2024</time>
+                                </p>
+                            </div>
+                            <div class="order-details-bottom">
+                                <ul class="order-items">
+                                    <li>
+                                        <span>iPad</span>
+                                        -
+                                        <span>100$</span>
+                                        <span>
+                                            (
+                                                <span>$50</span>
+                                                X
+                                                <span>2</span>
+                                            )
+                                        </span>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="order-status">pending</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </body>
+</html>
