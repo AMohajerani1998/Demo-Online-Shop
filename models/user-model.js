@@ -41,6 +41,7 @@ class User {
             this.email = result.email;
             this.address = result.address
             this.hashedPassword = result.password;
+            this.isAdmin = result.isAdmin;
             return true;
         } else {
             return false;

@@ -1,0 +1,54 @@
+<% if(locals.isAdmin){ %>
+    <li class="header-actionbar-items normal-font">
+        <a class="anchor" href="/admin/products">
+            Manage Products
+        </a>
+    </li>
+    <li class="header-actionbar-items normal-font">
+        <a class="anchor" href="/admin/orders">
+            Manage Orders
+        </a>
+    </li>
+<% } else { %>
+<% if (locals.isAuth){ %>
+    <li class="header-actionbar-items normal-font">
+        <a class="anchor" href="/orders">
+            My orders
+        </a>
+    </li>
+    <% } %>
+    <li class="header-actionbar-items normal-font">
+        <a class="anchor" href="/products">
+            Shop
+        </a>
+    </li>
+    <li class="header-actionbar-items normal-font">
+        <a class="anchor cart-anchor" href="/cart">
+            Cart
+        </a>
+        <div class="normal-font cart-counter">
+            2
+        </div>
+    </li>
+<% } %>
+    <% if(!locals.isAuth){ %>
+        <li class="header-actionbar-items normal-font">
+            <a class="anchor" href="/sign-up">
+                Sign-up
+            </a>
+        </li>
+        <li class="header-actionbar-items normal-font">
+            <a class="anchor" href="/log-in">
+                Log-in
+            </a>
+        </li>
+    <% } else { %>
+    <li class="header-actionbar-items normal-font">
+        <form id="logout-form" action="/log-out" method="POST">
+            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
+            <button class="normal-font" id="logout">
+                Logout
+            </button>
+        </form>
+    </li>
+    <% } %>

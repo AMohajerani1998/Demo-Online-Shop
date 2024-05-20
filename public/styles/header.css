@@ -1,31 +1,101 @@
+header {
+    color: #d59231;
+    position: fixed;
+    background-color: #211e1d;
+    right: 0;
+    left: 0;
+}
 header > hr {
     background-color: #d59231;
     height: 1px;
     border: 0;
 }
-.normal-font {
-    font-family: "Montserrat", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
-}
-.topic-font {
-    font-family: "Kanit", sans-serif;
-    font-weight: 700;
-    letter-spacing: 0.1rem;
-}
 .header {
     margin-top: 1rem;
     display: flex;
+    max-width: 60rem;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 0 2rem;
 }
+.hamburger-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 2rem;
+    height: 1.75rem;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+.hamburger-menu:active {
+    background-color: none;
+
+}
+.hamburger-menu span {
+    width: 2rem;
+    height: 0.1rem;
+    background: #ffe0b6;
+    display: inline-block;
+}
+.hidden {
+    display: none;
+}
+header nav .anchor {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+}
+header nav .anchor:hover,
+header nav .anchor:active {
+    background-color: #ffdcaa1e;
+}
+aside {
+    position: fixed;
+    background-color: black;
+    height: 100vh;
+    width: 100vw;
+}
+aside nav {
+    display: flex;
+    flex-direction: column;
+    height: 12rem;
+    margin-right: 0;
+    height: 35rem;
+}
+aside nav .header-actionbar-items {
+    margin: 2rem 0;
+    justify-content: center;
+}
+aside .anchor {
+    font-size: 1.5rem;
+    color: #ffdcaa;
+}
+aside .anchor:hover,
+aside anchor:active {
+    color: #ffc675;
+}
+aside #logout {
+    color: #ffdcaa;
+    border: 1px solid #ffdcaa;
+}
+aside #logout:hover,
+aside #logout:active {
+    color: #ffc675;
+    border: 1px solid #ffc675
+}
+aside li {
+    text-align: center;
+}
+.cart-anchor {
+    margin-right: 1rem;
+}
 #logo {
     font-size: 2rem;
 }
 .header-actionbar {
-    display: flex;
+    display: none;
     flex-direction: row;
     list-style: none;
     align-items: center;
@@ -46,6 +116,9 @@ header > hr {
     padding: 0.25rem 1rem;
     border-radius: 12px;
 }
+#logout-form {
+    margin: 0;
+}
 #logout {
     color: #ffb54f;
     border: 1px solid #ffb54f;
@@ -54,8 +127,28 @@ header > hr {
     border-radius: 4px;
 }
 #logout:hover,
-#logout:focus{
+#logout:active{
     border: 1px solid #ff9d14;
     color: #ff9d14;
     cursor: pointer;
+}
+
+@media (min-width: 768px){
+    header {
+        margin: auto;
+        width: 65%;
+    }
+    .header{
+        margin: auto;
+        width: 96%;
+        max-width: 43.95rem;
+        left: 0;
+        right: 0;
+    }
+    #wide-menu {
+        display: flex;
+    }
+    .hamburger-menu {
+        display: none;
+    }
 }

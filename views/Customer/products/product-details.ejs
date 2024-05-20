@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <%- include('includes/head', {title: 'Product Details'}) %>
+        <%- include('../../shared/includes/head', {title: 'Product Details'}) %>
         <link rel="stylesheet" href="/styles/item-details.css" />
     </head>
     <body>
-        <header>
-            <%- include('includes/header') %>
-        </header>
+            <%- include('../../shared/includes/header') %>
         <main>
             <div class="area-container">
                 <div class="box-shadow item-image-summary-container">
@@ -32,5 +27,4 @@
                 </div>
             </div>
         </main>
-    </body>
-</html>
+        <%- include('../../shared/includes/footer', {title: 'Product Details'}) %>

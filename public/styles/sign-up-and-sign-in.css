@@ -1,5 +1,4 @@
 .input-area-container {
-    width: 40%;
     margin: auto;
     text-align: center;
     color: rgb(173, 173, 173);
@@ -27,7 +26,8 @@
     font-size: 1rem;
 }
 .input-form-container {
-    width: 60%;
+    width: 90%;
+    max-width: 23.0399rem;
     margin: auto;
     padding: 0.5rem 0;
     border-radius: 4px;
@@ -85,4 +85,13 @@
     margin: auto;
     padding: 0.5rem;
     border: none;
+}
+
+@media (min-width: 768px){
+    .input-area-container {
+        width: 40%;
+        margin: auto;
+        text-align: center;
+        color: rgb(173, 173, 173);
+    }
 }

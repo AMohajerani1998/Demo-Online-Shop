@@ -1,13 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <%- include('includes/head', {title: 'Sign up'}) %>
+        <%- include('../../shared/includes/head', {title: 'Sign up'}) %>
         <link rel="stylesheet" href="/styles/sign-up-and-sign-in.css">
     </head>
     <body>
-        <header>
-            <%- include('includes/header') %>
-        </header>
+            <%- include('../../shared/includes/header') %>
         <main>
             <div class="input-area-container">
                 <h1 class="topic-font">Create New Account</h1>
@@ -126,12 +121,11 @@
                                 <button class="normal-font">
                                     Create Account
                                 </button>
-                                <a class="normal-font" href="">Login Instead</a>
+                                <a class="normal-font anchor" href="/log-in">Login Instead</a>
                             </li>
                         </ul>
                     </form>
                 </div>
             </div>
         </main>
-    </body>
-</html>
+<%- include('../../shared/includes/footer') %>

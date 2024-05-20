@@ -1,6 +1,7 @@
+const session = require('express-session')
 const mongodbStore = require('connect-mongodb-session')
 
-function createSessionStore(session){
+function createSessionStore(){
     const mongoDBStore = mongodbStore(session)
     const sessionStore = new mongoDBStore({
         uri: 'mongodb://localhost:27017',
@@ -10,12 +11,12 @@ function createSessionStore(session){
     return sessionStore;
 }
 
-function createSessionConfig(sessionStore){
+function createSessionConfig(){
     return {
         secret: 'super-secret',
         resave: false,
         saveUninitialized: false,
-        store: sessionStore,
+        store: createSessionStore(),
         cookie: {
             maxAge: 30 * 24 * 60 * 60 * 1000,
             sameSite: 'lax',
@@ -23,7 +24,4 @@ function createSessionConfig(sessionStore){
     }
 }
 
-module.exports = {
-    createSessionStore : createSessionStore,
-    createSessionConfig : createSessionConfig
-}
+module.exports = createSessionConfig;
