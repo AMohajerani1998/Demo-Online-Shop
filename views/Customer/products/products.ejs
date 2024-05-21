@@ -1,102 +1,21 @@
-        <%- include('../../shared/includes/head', {title: 'products'}) %>
-        <link rel="stylesheet" href="/styles/products.css" />
-    </head>
-    <body>
-            <%- include('../../shared/includes/header') %>
-        <main>
-            <div class="area-container">
-                <ul class="products-container">
+<%- include('../../shared/includes/head', {title: 'products'}) %>
+<link rel="stylesheet" href="/styles/products.css" />
+<script src="/scripts/product-management.js" defer></script>
+</head>
+<body>
+    <%- include('../../shared/includes/header') %>
+<main>
+    <div class="area-container">
+        <section>
+            <ul class="products-container">
+                <% for (const product of products){ %>
                     <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
+                        <%- include('../../shared/includes/product-box', {product:product}) %>
                     </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="product-box box-shadow">
-                            <img class="product-image" src="/products//ipad.jpeg" alt="">
-                            <div class="normal-font product-summary">
-                                <p>iPad</p>
-                                <div class="action-container">
-                                    <a class="anchor" href="">View Details</a>
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                   
-                </ul>
-            </div>
-        </main>
-        <%- include('../../shared/includes/footer') %>
+                <% } %>
+            </ul>
+        </section>
+    </div>
+</main>
+<%- include('../../shared/includes/footer') %>
 

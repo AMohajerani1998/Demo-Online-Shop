@@ -1,0 +1,13 @@
+        <%- include('../../shared/includes/head', {title: 'Edit Product'}) %>
+        <link rel="stylesheet" href="/styles/add-product.css" />
+        <script src="/scripts/image-preview.js" defer></script>
+    </head>
+    <body>
+            <%- include('../../shared/includes/header') %>
+        <main>
+            <div class="area-container">
+                <h1 class="topic-font">Edit Product</h1>
+                <%- include('../../shared/includes/product-form', {product:product, submitPath: `/admin/products/${product.id}`, imageRequired: false}) %>
+            </div>
+        </main>
+    <%- include('../../shared/includes/footer') %>

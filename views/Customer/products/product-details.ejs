@@ -7,12 +7,12 @@
             <div class="area-container">
                 <div class="box-shadow item-image-summary-container">
                     <div class="item-image-container">
-                        <img class="box-shadow" src="../images/products/ipad.jpeg" alt="" />
+                        <img class="box-shadow" src="<%= product.imageUrl %>" alt="" />
                     </div>
                     <div class="item-summary-container">
                         <div class="summary-container">
-                            <h1 class="item-name topic-font">iPad</h1>
-                            <p class="item-price normal-font">$50</p>
+                            <h1 class="item-name topic-font"><%= product.title %></h1>
+                            <p class="item-price normal-font">$<%= product.price %></p>
                         </div>
                         <form action="/buy-item">
                             <button class="normal-font add-to-cart-submit">Add to Cart</button>
@@ -21,10 +21,9 @@
                 </div>
                 <div class="box-shadow item-description-container">
                     <p class="normal-font">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                        Nulla facilis possimus, dolores iure hic necessitatibus
+                        <%= product.description %>
                     </p>
                 </div>
             </div>
         </main>
-        <%- include('../../shared/includes/footer', {title: 'Product Details'}) %>
+        <%- include('../../shared/includes/footer') %>

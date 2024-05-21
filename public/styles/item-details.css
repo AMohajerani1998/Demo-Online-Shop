@@ -1,18 +1,20 @@
 .area-container {
+    width: 80%;
     padding-top: 3rem;
     color: rgb(198, 198, 198);
 }
 .item-image-summary-container {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     background-color: #1c1a18;
 }
 .item-image-container {
-    width: rem;
-    padding: 2rem;
+    text-align: center;
 }
 .item-image-container img {
-    width: 28rem;
+    width: 15rem;
+    margin-top: 1rem;
+    border-radius: 6px;
 }
 .item-summary-container {
     padding-top: 2rem;
@@ -43,4 +45,23 @@
 }
 .item-description-container > p {
     margin: 0;
+}
+@media (min-width: 768px){
+    .area-container {
+        width: 60%;
+    }
+    .item-image-container {
+        padding: 3rem;
+    }
+    .item-image-container img {
+        transform: rotateZ(-10deg);
+        width: 150%;
+        max-width: 20rem;
+    }
+    .item-summary-container {   
+        margin-left: 5rem;
+    }
+    .item-image-summary-container {
+        flex-direction: row;
+    }
 }

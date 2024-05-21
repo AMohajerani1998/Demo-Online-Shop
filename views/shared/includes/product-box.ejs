@@ -1,0 +1,16 @@
+<article class="product-box box-shadow">
+    <img class="product-image" src="<%= product.imageUrl %>" alt="">
+    <div class="normal-font product-summary">
+        <p><%= product.title %></p>
+        <% if(locals.isAdmin){ %>
+        <div class="action-container">
+            <a class="anchor" href="/admin/products/<%= product.id %>">View & Edit</a>
+            <a class="delete-button anchor" data-postid="<%= product.id %>" data-csrfToken="<%= locals.csrfToken %>">Delete</a>
+        </div>
+        <% } else { %>
+            <div class="action-container">
+                <a class="anchor" href="/products/<%= product.id %>">View Details</a>
+            </div>
+        <% } %>
+    </div>
+</article>

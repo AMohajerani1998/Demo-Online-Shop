@@ -1,78 +1,18 @@
         <%- include('../../shared/includes/head', {title: 'New Product'}) %>
         <link rel="stylesheet" href="/styles/add-product.css" />
+        <script src="/scripts/image-preview.js" defer></script>
     </head>
     <body>
             <%- include('../../shared/includes/header') %>
         <main>
             <div class="area-container">
                 <h1 class="topic-font">Add New Product</h1>
-                <form class="input-form" action="/admin/products?_csrf=<%= locals.csrfToken %>" method="POST" enctype="multipart/form-data">
-                    <ul>
-                        <li class="input-field">
-                            <label for="title" class="input-label normal-font"
-                                >title</label
-                            >
-                            <input
-                                type="text"
-                                id="title"
-                                name="title"
-                                class="text-input"
-                            />
-                        </li>
-                        <li class="input-field">
-                            <label class="input-label normal-font" for="image"> Image</label>
-                            <input
-                                type="file"
-                                name="image"
-                                id="product-image"
-                                accept="image/jpg, image/png"
-                            />
-                        </li>
-                        <li class="input-field">
-                            <label for="summary" class="input-label normal-font"
-                                >summary</label
-                            >
-                            <input
-                                type="text"
-                                id="summary"
-                                name="summary"
-                                class="text-input"
-                                maxlength="250"
-                            />
-                        </li>
-                        <li class="input-field">
-                            <label for="price" class="input-label normal-font"
-                                >price</label
-                            >
-                            <input
-                                type="number"
-                                id="price"
-                                name="price"
-                                class="text-input"
-                                step="0.01"
-                                min="0.01"
-                            />
-                        </li>
-                        <li class="input-field">
-                            <label
-                                class="normal-font input-label"
-                                for="description"
-                                >description</label
-                            >
-                            <textarea
-                                class="text-input normal-font"
-                                name="description"
-                                id="description"
-                            ></textarea>
-                        </li>
-                        <li class="input-field action-container">
-                            <button type="reset" class="normal-font">
-                                Reset
-                            </button>
-                            <button class="normal-font">Save</button>
-                        </li>
-                    </ul>
-                </form>
+                <%- include('../../shared/includes/product-form', {submitPath: '/admin/products', product:{
+                    title: '',
+                    summary: '',
+                    price: '',
+                    description: '',
+                }, imageRequired: true}) %>
             </div>
         </main>
     <%- include('../../shared/includes/footer') %>

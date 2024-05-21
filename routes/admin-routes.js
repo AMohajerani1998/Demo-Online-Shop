@@ -6,10 +6,14 @@ const imageUploaderMiddleware = require('../middlewears/image-uploader-middlewar
 
 router.get('/products', adminController.loadProducts)
 
-router.post('/products', imageUploaderMiddleware, adminController.createNewProduct)
-
 router.get('/products/add', adminController.loadProductForm)
 
-router.get('/products/:id/edit', adminController.editProduct)
+router.post('/products', imageUploaderMiddleware, adminController.createNewProduct)
+
+router.get('/products/:id', adminController.loadProductDetails)
+
+router.post('/products/:id', imageUploaderMiddleware, adminController.editProduct)
+
+router.delete('/products/:id', adminController.removeProduct)
 
 module.exports = router;

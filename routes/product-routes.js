@@ -1,8 +1,9 @@
 const express = require('express')
 const router = express.Router();
-const guardRoute = require('../middlewears/auth-protection-middleware')
+const productsController = require('../controllers/products-controller')
 
-router.get('/products', function(req, res){
-    res.render('customer/products/products')
-})
+router.get('/products', productsController.loadProducts)
+router.get('/products/:id', productsController.loadProductDetails)
+
+
 module.exports = router;

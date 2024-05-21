@@ -1,5 +1,3 @@
-const db = require("../data/database");
-
 async function auth(req, res, next) {
     const userData = req.session.user;
     if (!userData) {

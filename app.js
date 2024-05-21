@@ -13,12 +13,13 @@ const createSessionConfig = require("./config/session");
 const csrfTokenMiddleware = require("./middlewears/csrf-token-middleware");
 const CheckAuthMiddleware = require("./middlewears/check-auth-middleware");
 const errorHandlerMiddleware = require('./middlewears/error-handler-middleware')
+const routeProtectionMiddleware = require('./middlewears/route-protection-middleware')
 
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
 app.use(express.static("public"));
-app.use(express.static('product-data'))
+app.use('/products/assets', express.static('product-data'))
 app.use(express.urlencoded({ extended: true }));
 
 app.use(session(createSessionConfig()));
@@ -28,10 +29,11 @@ app.use(csrf());
 app.use(csrfTokenMiddleware);
 app.use(CheckAuthMiddleware);
 
-app.use('/admin', adminRoutes)
 app.use(baseRoutes);
-app.use(authRoutes);
 app.use(productRoutes);
+app.use(authRoutes);
+app.use(routeProtectionMiddleware)
+app.use('/admin', adminRoutes)
 
 
 app.use(errorHandlerMiddleware)
