@@ -1,3 +1,4 @@
+const mongodb = require('mongodb')
 const db = require('../data/database')
 const bcrypt = require('bcrypt')
 
@@ -17,6 +18,10 @@ class User {
         this.postalCode = postalCode;
         this.city = city;
     };
+
+    static fetchUserById(userId){
+        return db.getDb().collection('users').findOne({_id: new mongodb.ObjectId(userId)}, {projection: {password:0}})
+    }
 
     async saveUser(){
         const hashedPassword = await bcrypt.hash(this.password, 10);

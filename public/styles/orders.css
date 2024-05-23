@@ -16,6 +16,8 @@
     border-radius: 4px;
 }
 .order-items {
+    color: rgba(201, 201, 201, 0.647);
+    font-weight: 400;
     margin: 0 0 0 1rem;
 }
 .order-price-date-container {
@@ -32,4 +34,40 @@
     border-radius: 12px;
     font-weight: 300;
     font-size: 1.25rem;
+}
+.actions-container {
+    margin-top: 1rem;
+}
+.order-management-form {
+    align-items: center;
+    margin: 0;
+}
+.order-management-form > select {
+    height: 2rem;
+    border-radius: 4px;
+}
+.order-management-form > button {
+    color: #ffb54f;
+    border: 1px solid #ffb54f;
+    padding: 0.5rem 0.75rem;
+    background-color: transparent;
+    border-radius: 4px;
+    vertical-align: top;
+}
+.order-management-form > button:hover,
+.order-management-form > button:focus {
+    border: 1px solid #ff9d14;
+    color: #ff9d14;
+    cursor: pointer;
+}
+.buyer-address p {
+    margin: 0.25rem;
+}
+.buyer-address p a {
+    color: rgb(198, 198, 198);
+    text-decoration: none;
+}
+.buyer-address p a:hover,
+.buyer-address p a:active {
+    color: rgb(163, 163, 163);
 }

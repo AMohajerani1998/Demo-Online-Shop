@@ -1,0 +1,22 @@
+<section class="cart-item-box box-shadow">
+    <div class="cart-item-summary">
+        <h2 class="topic-font"><%= cartItem.product.title %></h2>
+        <p class="normal-font">
+            <span id="product-total-price"><%= cartItem.totalPrice.toFixed(2) %></span>$ <span class="item-price">(<%= cartItem.product.price.toFixed(2) %>$)</span>
+        </p>
+    </div>
+    <div class="cart-item-count-box">
+        <form>
+            <input
+                class="normal-font item-count"
+                type="number"
+                id="item-count"
+                name="item-count"
+                step="1"
+                required
+                value="<%= cartItem.quantity %>"
+            />
+            <button class="cart-item-submit" data-csrftoken="<%= locals.csrfToken %>" data-productid="<%= cartItem.product.id %>">Update</button>
+        </form>
+    </div>
+</section>

@@ -36,24 +36,4 @@
     font-weight: 300;
     font-size: 1.25rem;
 }
-.order-management-form {
-    align-items: center;
-}
-.order-management-form > select {
-    height: 2rem;
-    border-radius: 4px;
-}
-.order-management-form > button {
-    color: #ffb54f;
-    border: 1px solid #ffb54f;
-    padding: 0.5rem 0.75rem;
-    background-color: transparent;
-    border-radius: 4px;
-    vertical-align: top;
-}
-.order-management-form > button:hover,
-.order-management-form > button:focus {
-    border: 1px solid #ff9d14;
-    color: #ff9d14;
-    cursor: pointer;
-}
+

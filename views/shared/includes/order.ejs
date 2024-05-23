@@ -1,0 +1,45 @@
+<div class="order-container normal-font">
+    <div class="order-details-container">
+        <div class="order-details-top">
+            <p class="order-price-date-container">
+                <span class="order-price"><%= order.cart.totalPrice.toFixed(2) %>$</span>
+                -
+                <time datetime="<%= order.date %>"><%= order.formattedDate %></time>
+            </p>
+        </div>
+        <div>
+        <% if (locals.isAdmin){ %>
+            <address class="buyer-address">
+                <p><a href="<%= order.user.email %>"><%= order.user.fullName %></a></p>
+                <p>
+                    <%= order.user.address.street %>
+                    <%= order.user.address.postalCode %>
+                    <%= order.user.address.city %>
+                </p>
+            </address>
+        <% } %>
+        </div>
+        <div class="order-details-bottom">
+            <ul class="order-items">
+                <% for (const orderItem of order.cart.items){ %>
+                    <%- include('./order-item', {orderItem}) %>
+                <% } %>
+            </ul>
+        </div>
+    <% if (locals.isAdmin){ %>
+        <div class="actions-container">
+            <form action="" method="POST" class="order-management-form">
+                <input type="hidden" name="orderId" value="<%= order.id %>">
+                <input type="hidden" name="csrftoken" value="<%= locals.csrfToken %>">
+                <select name="status" class="normal-font" id="status">
+                    <option <% if (order.status === 'pending'){ %> selected <% } %> value="pending">pending</option>
+                    <option <% if (order.status === 'fulfilled'){ %> selected <% } %> value="fulfilled">fulfilled</option>
+                    <option <% if (order.status === 'canceled'){ %> selected <% } %> value="canceled">canceled</option>
+                </select>
+                <button>Update</button>
+            </form>
+        </div>
+    <% } %>
+    </div>
+    <div class="order-status"><%= order.status %></div>
+</div>

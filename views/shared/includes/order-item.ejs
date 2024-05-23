@@ -1,0 +1,12 @@
+<li>
+    <span><%= orderItem.product.title %></span>
+    -
+    <span><%= orderItem.totalPrice %>$</span>
+    <span>
+        (
+            <span>$<%= orderItem.product.price %></span>
+            X
+            <span><%= orderItem.quantity %></span>
+        )
+    </span>
+</li>

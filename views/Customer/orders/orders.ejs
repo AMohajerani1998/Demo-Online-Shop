@@ -1,0 +1,17 @@
+        <%- include('../../shared/includes/head', {title: 'Orders'}) %>
+        <link rel="stylesheet" href="/styles/orders.css" />
+    </head>
+    <body>
+            <%- include('../../shared/includes/header') %>
+        <main>
+            <div class="area-container">
+                <h1 class="topic-font">All Your Orders</h1>
+                <div class="orders-container">
+                    <% for (const order of orders){ %>
+                        <%- include('../../shared/includes/orders', {order:order}) %>
+                    <% } %>
+                </div>
+            </div>
+        </main>
+        <%- include('../../shared/includes/footer') %>
+

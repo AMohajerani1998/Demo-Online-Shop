@@ -80,6 +80,16 @@ class Product {
         const productId = new ObjectId(this.id)
         db.getDb().collection('products').deleteOne({_id: productId})
     }
+
+     static async findMultipleProducts(ids){
+         const productIds = ids.map(function(id){
+             return new mongodb.ObjectId(id)
+         })
+         const result = await db.getDb().collection('products').find({_id: {$in: productIds}}).toArray();
+         return result.map(function(product){
+             return new Product(product)
+         })
+     }
 }
 
 module.exports = Product;

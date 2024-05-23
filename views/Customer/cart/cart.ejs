@@ -1,5 +1,6 @@
         <%- include('../../shared/includes/head', {title: 'Shopping Cart'}) %>
         <link rel="stylesheet" href="/styles/cart.css" />
+        <script src="/scripts/cart-edit.js" defer></script>
     </head>
     <body>
             <%- include('../../shared/includes/header') %>
@@ -7,77 +8,25 @@
             <div class="area-container">
                 <h1 class="topic-font">Your Cart</h1>
                 <div class="cart-container">
-                    <div class="cart-item-box box-shadow">
-                        <div class="cart-item-summary">
-                            <h2 class="topic-font">iPad</h2>
-                            <p class="normal-font">
-                                236$ <span class="item-price">(53$)</span>
-                            </p>
-                        </div>
-                        <div class="cart-item-count-box">
-                            <form action="/cart/id/update">
-                                <input
-                                    class="normal-font item-count"
-                                    type="number"
-                                    id="item-count"
-                                    name="item-count"
-                                    step="1"
-                                />
-                                <button class="cart-item-submit">Update</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="cart-item-box box-shadow">
-                        <div class="cart-item-summary">
-                            <h2 class="topic-font">iPad</h2>
-                            <p class="normal-font">
-                                236$ <span class="item-price">(53$)</span>
-                            </p>
-                        </div>
-                        <div class="cart-item-count-box">
-                            <form action="/cart/id/update">
-                                <input
-                                    class="normal-font item-count"
-                                    type="number"
-                                    id="item-count"
-                                    name="item-count"
-                                    step="1"
-                                />
-                                <button class="cart-item-submit">Update</button>
-                            </form>
-                        </div>
-                    </div>
-                    <div class="cart-item-box box-shadow">
-                        <div class="cart-item-summary">
-                            <h2 class="topic-font">iPad</h2>
-                            <p class="normal-font">
-                                236$ <span class="item-price">(53$)</span>
-                            </p>
-                        </div>
-                        <div class="cart-item-count-box">
-                            <form action="/cart/id/update">
-                                <input
-                                    class="normal-font item-count"
-                                    type="number"
-                                    id="item-count"
-                                    name="item-count"
-                                    step="1"
-                                />
-                                <button class="cart-item-submit">Update</button>
-                            </form>
-                        </div>
-                    </div>
+                    <% for (const cartItem of locals.cart.items){ %>
+                        <%- include('includes/cart-item-box', {cartItem: cartItem}) %>
+                    <% } %>
                 </div>
                 <div class="cart-overall-price-container">
                     <h1 class="topic-font overall-price-container">
                         Total: 
-                        <span id="overall-price" class="overall-price">119$</span>
+                        <span id="overall-price" class="overall-price"><%= locals.cart.totalPrice.toFixed(2) %></span>$
                     </h1>
-                    <form action="/buy-items" method="POST">
+                    <% if (locals.isAuth){ %>
+                        <form action="/orders" method="POST">
+                            <input type="hidden" name="_csrf" value="<%= locals.csrfToken %>">
                             <button class="normal-font buy-items-submit">
                                 Buy Products
                             </button>
-                    </form>
+                        </form>
+                    <% } else { %>
+                        <p>Please log-in to submit order.</p>
+                    <% } %>
                 </div>
             </div>
         </main>

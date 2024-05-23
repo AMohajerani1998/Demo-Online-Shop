@@ -1,6 +1,5 @@
 const Product = require("../models/product-model");
-const mongodb = require("mongodb");
-const ObjectId = mongodb.ObjectId;
+const Order = require("../models/order-model");
 
 async function loadProducts(req, res, next) {
     let products;
@@ -58,10 +57,42 @@ async function removeProduct(req, res, next) {
         product = await Product.fetchProductById(req.params.id);
         await product.removeProduct();
     } catch (error) {
-        next(error);
+        return next(error);
     }
 
-    res.json({message: 'Product deleted.'})
+    res.json({ message: "Product deleted." });
+}
+
+async function loadOrders(req, res, next) {
+    let orders;
+    try {
+        orders = await Order.fetchAllOrders();
+    } catch (error) {
+        return next(error);
+    }
+    res.render("admin/orders/manage-orders", { orders: orders });
+}
+
+async function updateOrder(req, res, next) {
+    let result;
+    const orderId = req.params.id;
+    const newStatus = req.body.status;
+    let order;
+    try {
+        order = await Order.fetchOrderById(orderId);
+    } catch (error) {
+        return next(order);
+    }
+    order.status = newStatus;
+    try {
+        result = await order.saveOrder();
+    } catch (error) {
+        return next(error);
+    }
+    res.status(201).json({
+        message: "Success",
+        orderStatus: order.status,
+    });
 }
 
 module.exports = {
@@ -70,5 +101,7 @@ module.exports = {
     loadProductForm: loadProductForm,
     loadProductDetails: loadProductDetails,
     editProduct: editProduct,
-    removeProduct: removeProduct
+    removeProduct: removeProduct,
+    loadOrders: loadOrders,
+    updateOrder: updateOrder,
 };
