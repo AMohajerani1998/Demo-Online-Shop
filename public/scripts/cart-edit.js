@@ -1,6 +1,6 @@
 const cartItemUpdateButtons = document.querySelectorAll(".cart-item-submit");
 const overalPrice = document.getElementById("overall-price");
-const cartCounter = document.getElementById("cart-counter");
+const cartCounters = document.querySelectorAll(".cart-counter");
 
 async function updateCartItem(event) {
     event.preventDefault();
@@ -34,7 +34,9 @@ async function updateCartItem(event) {
     }
     const responseData = await response.json();
     overalPrice.textContent = responseData.newTotalPrice.toFixed(2);
-    cartCounter.textContent = responseData.newTotalQuantity;
+    for (const cartCounter of cartCounters){
+        cartCounter.textContent = responseData.newTotalQuantity;
+    }
     productTotalPrice.textContent = responseData.productNewTotalPrice.toFixed(2);
 }
 

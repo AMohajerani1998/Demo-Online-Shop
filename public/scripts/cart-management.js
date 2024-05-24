@@ -1,7 +1,7 @@
 const addItemToCartButton = document.querySelector("#add-to-cart-button");
 const productid = addItemToCartButton.dataset.productid;
 const csrfToken = addItemToCartButton.dataset.csrftoken;
-const cartCounter = document.querySelector('#cart-counter')
+const cartCounters = document.querySelector('#cart-counter')
 
 let itemCount;
 async function addItemToCart(event) {
@@ -26,7 +26,9 @@ async function addItemToCart(event) {
     }
     const responseData = await response.json();
     itemCount = responseData.newTotalQuantity
-    cartCounter.textContent = itemCount
+    for (const cartCounter of cartCounters){
+        cartCounter.textContent = itemCount;
+    }
 }
 
 addItemToCartButton.addEventListener("click", addItemToCart);
