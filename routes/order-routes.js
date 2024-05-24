@@ -6,4 +6,8 @@ router.get('/', orderController.loadOrders)
 
 router.post('/', orderController.submitOrder)
 
+router.get('/success', orderController.loadOrderSuccess)
+
+router.get('/failure', orderController.loadOrderFailure)
+
 module.exports = router;
